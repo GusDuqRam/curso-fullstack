@@ -61,7 +61,7 @@ img {
 }
 
 #ai-foto {
-    display: none;
+    display: block;
 }
 
 .news-content {
@@ -74,4 +74,20 @@ img {
 
 .even {
     background-color: #44803f;
+}
+
+@media only screen and (max-width: 600px){
+
+    header {
+        padding: 10px;
+    }
+
+    #ai-foto {
+        display: none;
+    }
+
+    .news {
+        border: 1px solid;
+        margin: 10px;
+    }
 }
