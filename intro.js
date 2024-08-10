@@ -110,4 +110,7 @@ if(persona.sexo = "M"){
     console.log("Es mujer");
 }
 
+// es lo mismo que el codigo anterior
 persona.sexo == "M" ? console.log("Es hombre") : console.log("Es mujer");
+
+persona.semanasCotizadas >= 1300 && persona.edad >= edadPesnsionMasculina && persona.sexo == "M" ? console.log("Es hombre") : console.log("Es mujer");
