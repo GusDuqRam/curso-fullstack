@@ -36,7 +36,6 @@ const inicio = () =>{
     let identification = "123456789"
     console.log(`hola mundo ${month} ${identification} ${passPort}`);
 })();
-
 const arrayMethod = () => {
     // arrays
     const baloto = [18, 28, 38, 80, 90]
@@ -71,6 +70,24 @@ const arrayMethod = () => {
     const filtersNumbers = baloto.filter((el) => el >= 30);
     console.log(filtersNumbers);
 }
+//console.log(identification);
 
-console.log(identification);
+// hoisting
+const hoisting = () => {
+    const year = 2023;
+    console.log(year);
+    //forma incorrecta para llamar una funcion
+    testFuction();
+
+    function testFuction () {
+        console.log("soy una funcion de prueba");
+    }
+
+    //forma correcta de llamar una funcion
+    const testFuction2 = () => {
+        console.log("soy una funcion de prueba2");
+    }
+
+    testFuction2();
+}
 
