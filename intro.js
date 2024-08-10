@@ -52,93 +52,107 @@ let persona = {
     fechaExpedicion: "2020-01-01",
 }
 
-// vamos a ver si la persona puede entrar a un bar
+function ejemploCondiciones(){
+    // vamos a ver si la persona puede entrar a un bar
 
-let mayoriaEdad =18;
-let edadPersona = persona.edad;
+    let mayoriaEdad =18;
+    let edadPersona = persona.edad;
 
-if(edadPersona >= mayoriaEdad){
-    console.log("Puede entrar al bar");
-} else{
-    console.log("No puede entrar al bar");
+    if(edadPersona >= mayoriaEdad){
+        console.log("Puede entrar al bar");
+    } else{
+        console.log("No puede entrar al bar");
+    }
+
+    // condicional con varios casos
+    const edadPesnsionMasculina = 62;
+    const edadPensionFemenina = 57;
+
+    if (persona.edad >= edadPesnsionMasculina && persona.sexo == "M" && persona.semanasCotizadas >= 1300){
+        console.log("Puede pensionarse");
+    } else if(persona.edad >= edadPensionFemenina && persona.sexo == "F" && persona.semanasCotizadas >= 1300){
+
+    } else {
+        console.error("No se puede pensionar");
+    }
+
+    // condicional con el operador OR ||
+
+    if(persona.cedula || persona.pasaporte){
+        console.log("Puede salir del pais");
+    } else {
+        console.log("No puede salir del pais");
+    }
+
+    //switch o case
+    let dia = "viernes";
+    switch(dia) {
+        case "lunes":
+            console.log("Hoy es Lunes");
+            break;
+        case "martes":
+            console.log("Hoy es Martes");
+            break;
+        case "miercoles":
+            console.log("Hoy es Miercoles");
+            break;
+        case "jueves":
+            console.log("Hoy es Jueves");
+            break;
+        case "viernes":
+            console.log("Hoy es Viernes");
+            break;
+    }
+
+    // operador ternario
+    if(persona.sexo = "M"){
+        console.log("Es hombre");
+    } else {
+        console.log("Es mujer");
+    }
+
+    // es lo mismo que el codigo anterior
+    persona.sexo == "M" ? console.log("Es hombre") : console.log("Es mujer");
+
+    persona.semanasCotizadas >= 1300 && persona.edad >= edadPesnsionMasculina && persona.sexo == "M" ? console.log("Es hombre") : console.log("Es mujer");
+
 }
+ejemploCondiciones();
 
-// condicional con varios casos
-const edadPesnsionMasculina = 62;
-const edadPensionFemenina = 57;
+function ejemploCiclos(){
+    //ciclos, bucles, loops
+    //for
+    for(let i=0; i<=5; i++){
+        console.log(i + " elefante se balanceaba sobre la tela de un araña, como veian que resistia fueron a llamar otro elefante")
+    }
 
-if (persona.edad >= edadPesnsionMasculina && persona.sexo == "M" && persona.semanasCotizadas >= 1300){
-    console.log("Puede pensionarse");
-} else if(persona.edad >= edadPesnsionFemenina && persona.sexo == "F" && persona.semanasCotizadas >= 1300){
+    for(let i=0; i<nombres.length; i++){
+        console.log(nombres[i]);
+    }
 
-} else {
-    console.error("No se puede pensionar");
+    //while mientras
+    while(persona.edad < 30){
+        console.log("para tener treinta años le faltan " + (30-persona.edad) + " años");
+        persona.edad++;
+    }
+
+    //do while, haz mientras
+    let opcion = 0;
+    do{
+        opcion++;
+        console.log("Bienvenido a Mario Kart");
+        console.log("1. Jugar");
+        console.log("2. Configuracion");
+        console.log("3. Salir");
+    }while(opcion != 4);
 }
+ejemploCiclos();
 
-// condicional con el operador OR ||
-
-if(persona.cedula || persona.pasaporte){
-    console.log("Puede salir del pais");
-} else {
-    console.log("No puede salir del pais");
+// funciones
+function saludar (){
+    console.log("Hola, te doy la bienvenida al programa");
+        if(persona.edad >= 18){
+            console.log("Puede jugar");
+        }
 }
-
-//switch o case
-let dia = "viernes";
-switch(dia) {
-    case "lunes":
-        console.log("Hoy es Lunes");
-        break;
-    case "martes":
-        console.log("Hoy es Martes");
-        break;
-    case "miercoles":
-        console.log("Hoy es Miercoles");
-        break;
-    case "jueves":
-        console.log("Hoy es Jueves");
-        break;
-    case "viernes":
-        console.log("Hoy es Viernes");
-        break;
-}
-
-// operador ternario
-if(persona.sexo = "M"){
-    console.log("Es hombre");
-} else {
-    console.log("Es mujer");
-}
-
-// es lo mismo que el codigo anterior
-persona.sexo == "M" ? console.log("Es hombre") : console.log("Es mujer");
-
-persona.semanasCotizadas >= 1300 && persona.edad >= edadPesnsionMasculina && persona.sexo == "M" ? console.log("Es hombre") : console.log("Es mujer");
-
-//ciclos, bucles, loops
-
-//for
-
-for(let i=0; i<=5; i++){
-    console.log(i + "elefante se balanceaba sobre la tela de un araña, como veian que resistia fueron a llamar otro elefante")
-}
-
-for(let i=0; i<nombres.length; i++){
-    console.log(nombres[i]);
-}
-
-//while mientras
-
-while(persona.edad < 30){
-    console.log("para tener treinta años le faltana" + (30-persona.edad) + "años");
-    persona.edad++;
-}
-
-//do while, haz mientras
-let opcion = 0;
-do{
-    console.log("Bienvenido a Mario Kart");
-    console.log("1. Jugar");
-    console.log("2. Configuracion");
-    console.log("3. Salir");
-}while(opcion != 4);
+saludar();
