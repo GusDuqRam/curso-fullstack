@@ -91,3 +91,32 @@ const hoisting = () => {
     testFuction2();
 }
 
+// collback funcion como parametro de otra funcion
+
+const demoCallback = () => {
+
+    const saludar = (funcion) => {
+        console.log("hola mundo");
+        funcion();
+    }
+    const despedir = () => {
+        console.log("adios");
+    }
+
+    saludar(despedir);
+
+    const timer = (fn) => {
+        console.log("la siguiente funcion se ejecutara en 5 segundos");
+        setTimeout(fn, 5000);
+    }
+
+    timer(despedir);
+
+    setTimeout(()=>{
+        console.log("han pasado 4 segundos");
+    }, 4000);
+
+    timer(despedir);
+}
+
+demoCallback();
