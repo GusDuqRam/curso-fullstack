@@ -14,3 +14,4 @@ let resultadoSaludo = saludar(nombrePersona);
 let edadPersona = prompt("ingresa tu edad");
 let resultadoCalculo = calcularNacimiento(edadPersona);
 console.log("Hola " + resultadoSaludo + "tu año de nacimiento es: " +resultadoCalculo);
+
