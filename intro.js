@@ -117,7 +117,7 @@ function ejemploCondiciones(){
     persona.semanasCotizadas >= 1300 && persona.edad >= edadPesnsionMasculina && persona.sexo == "M" ? console.log("Es hombre") : console.log("Es mujer");
 
 }
-ejemploCondiciones();
+//ejemploCondiciones();
 
 function ejemploCiclos(){
     //ciclos, bucles, loops
@@ -146,13 +146,14 @@ function ejemploCiclos(){
         console.log("3. Salir");
     }while(opcion != 4);
 }
-ejemploCiclos();
+//ejemploCiclos();
 
 // funciones
-function saludar (){
-    console.log("Hola, te doy la bienvenida al programa");
-        if(persona.edad >= 18){
+function saludar (nombre, edad=19){
+    console.log("Hola, " + nombre + " te doy la bienvenida al programa");
+        if(edad >= 18){
             console.log("Puede jugar");
         }
 }
-saludar();
+saludar("Oscar", 15);
+saludar(persona.nombre);
