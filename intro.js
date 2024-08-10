@@ -58,5 +58,56 @@ let mayoriaEdad =18;
 let edadPersona = persona.edad;
 
 if(edadPersona >= mayoriaEdad){
-    console.log("Puede entrar al bar")
+    console.log("Puede entrar al bar");
+} else{
+    console.log("No puede entrar al bar");
 }
+
+// condicional con varios casos
+const edadPesnsionMasculina = 62;
+const edadPensionFemenina = 57;
+
+if (persona.edad >= edadPesnsionMasculina && persona.sexo == "M" && persona.semanasCotizadas >= 1300){
+    console.log("Puede pensionarse");
+} else if(persona.edad >= edadPesnsionFemenina && persona.sexo == "F" && persona.semanasCotizadas >= 1300){
+
+} else {
+    console.error("No se puede pensionar");
+}
+
+// condicional con el operador OR ||
+
+if(persona.cedula || persona.pasaporte){
+    console.log("Puede salir del pais");
+} else {
+    console.log("No puede salir del pais");
+}
+
+//switch o case
+let dia = "viernes";
+switch(dia) {
+    case "lunes":
+        console.log("Hoy es Lunes");
+        break;
+    case "martes":
+        console.log("Hoy es Martes");
+        break;
+    case "miercoles":
+        console.log("Hoy es Miercoles");
+        break;
+    case "jueves":
+        console.log("Hoy es Jueves");
+        break;
+    case "viernes":
+        console.log("Hoy es Viernes");
+        break;
+}
+
+// operador ternario
+if(persona.sexo = "M"){
+    console.log("Es hombre");
+} else {
+    console.log("Es mujer");
+}
+
+persona.sexo == "M" ? console.log("Es hombre") : console.log("Es mujer");
