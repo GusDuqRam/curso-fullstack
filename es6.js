@@ -92,31 +92,74 @@ const hoisting = () => {
 }
 
 // collback funcion como parametro de otra funcion
-
 const demoCallback = () => {
 
     const saludar = (funcion) => {
         console.log("hola mundo");
         funcion();
     }
+
     const despedir = () => {
         console.log("adios");
     }
-
     saludar(despedir);
 
     const timer = (fn) => {
         console.log("la siguiente funcion se ejecutara en 5 segundos");
         setTimeout(fn, 5000);
     }
-
     timer(despedir);
 
     setTimeout(()=>{
         console.log("han pasado 4 segundos");
     }, 4000);
 
-    timer(despedir);
+    //setInterval se ejecuta cada cierto tiempo
+    const seDespide = setInterval(despedir, 2000);
+
+    // detener intervalo
+    const intervalo = setInterval(() => {
+        console.log("universidad");
+    }, 1000);
+
+    setTimeout(() => {
+        clearInterval(intervalo);
+        clearInterval(seDespide);
+    }, 6000);
+
+    //poner reloj
+    /*const reloj = setInterval(() => {
+        let date = new Date();
+        console.log(`${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`);
+    })*/
+
+}
+//demoCallback();
+
+//promesas
+const demoPromesas = () => {
+    let promesa = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("la promesa se resolvio a los dos segundos");
+        }, 2000);
+    })
+
+    promesa
+    .then((response) => console.log(response))
+    .catch((error) => console.log(error));
+
+    let promesa2 = new Promise((resolve, reject) => {
+        let number = Math.floor(Math.random() * 10);
+        if(number % 2 ===0) {
+            resolve(number);
+        }else{
+            reject(number);
+        }
+    });
+
+    promesa2
+    .then((response) => console.info(`el numero ${response} es par`))
+    .catch((error) => console.error(`el numero ${error} es impar`));
 }
 
-demoCallback();
+demoPromesas();
