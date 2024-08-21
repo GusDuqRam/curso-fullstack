@@ -18,7 +18,7 @@ const inicio = () =>{
     let edadPersona = prompt("ingresa tu edad");
     let resultadoCalculo = calcularNacimiento(edadPersona);
 
-//let result = "Hola " + resultadoSaludo + "tu año de nacimiento es: " +resultadoCalculo;
+//let result = resultadoSaludo + "tu año de nacimiento es: " +resultadoCalculo;
 
 // esto es un template literal
     let result2 = `${saludar(nombrePersona)} tu año de nacimiento es ${resultadoCalculo}`;
